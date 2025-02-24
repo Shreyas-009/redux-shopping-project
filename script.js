@@ -1,17 +1,20 @@
 import { combineReducers, createStore } from "redux";
 import { productsList } from "./productsList.js";
+
 import cartReducer, {
-  CART_ADD_ITEM,
-  CART_REMOVE_ITEM,
-  CART_INCREASE_QUANTITY,
-  CART_DECREASE_QUANTITY,
+  addItemToCart,
+  removeItemFromCart,
+  increaseItemQuantity,
+  decreaseItemQuantity,
 } from "./cartReducer.js";
 
 import wishListReducer, {
-  WISHLIST_ADD_ITEM,
-  WISHLIST_REMOVE_ITEM,
+  addItemToWishlist,
+  removeItemFromWishlist,
 } from "./wishListReducer.js";
+
 import productReducer from "./productReducer.js";
+
 
 let clutter = "";
 
@@ -46,11 +49,11 @@ const reducer = combineReducers({
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
 
-store.dispatch({ type: CART_ADD_ITEM, payload: { productId: 1, quantity: 1 } });
-store.dispatch({ type: CART_REMOVE_ITEM, payload: { productId: 1 } });
-store.dispatch({ type: WISHLIST_ADD_ITEM, payload: { productId: 1 } });
-store.dispatch({ type: WISHLIST_REMOVE_ITEM, payload: { productId: 1 } });
-store.dispatch({ type: CART_ADD_ITEM, payload: { productId: 1, quantity: 1 } });
-store.dispatch({ type: CART_INCREASE_QUANTITY, payload: { productId: 1 } });
-store.dispatch({ type: CART_DECREASE_QUANTITY, payload: { productId: 1 } });
-store.dispatch({ type: CART_DECREASE_QUANTITY, payload: { productId: 1 } });
+store.dispatch(addItemToCart(1));
+store.dispatch(removeItemFromCart(1));
+store.dispatch(addItemToCart(1));
+store.dispatch(increaseItemQuantity(1));
+store.dispatch(decreaseItemQuantity(1));
+store.dispatch(decreaseItemQuantity(1));
+store.dispatch(addItemToWishlist(2));
+store.dispatch(removeItemFromWishlist(2));
