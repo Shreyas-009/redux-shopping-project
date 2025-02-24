@@ -99,7 +99,7 @@ html {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     font-size: 1.2rem;
     font-weight: 600;
     color: #000;
@@ -107,9 +107,24 @@ html {
 
 .f-left {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+    align-items: start;
+    gap: 2px;
+
+}
+
+.f-right{
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    justify-content: end;
+    align-items: start;
+}
+
+.productPrice{
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .card-buttom {

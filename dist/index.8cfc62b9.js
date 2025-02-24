@@ -616,7 +616,8 @@ let clutter = "";
                     <p class="discreption">${product.description}</p>
                 </div>
                 <div class="card-footer">
-                    <div class="f-left">${product.price}
+                    <div class="f-left">
+                    <p class="productPrice">${product.price} $</p>
                     <p>${product.rating.rate} : ${product.rating.count}</p>
                     </div>
                     <div class="f-right">
